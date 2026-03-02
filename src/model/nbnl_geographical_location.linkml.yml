@@ -9,13 +9,92 @@ imports:
 prefixes:
   linkml: https://w3id.org/linkml/
   cim: https://cim.ucaiug.io/ns#
-  dcterms: http://purl.org/dc/terms/
-  nbnl-term: https://begrippen.netbeheernederland.nl/id/
-  unit: http://qudt.org/vocab/unit/
+  dct: http://purl.org/dc/terms/
+  gh: https://github.com/
+  cbs: https://www.cbs.nl/nl-nl/onze-diensten/methoden/begrippen/
+  eu: https://cim.ucaiug.io/ns/eu#
+  nbnl: https://begrippen.netbeheernederland.nl/energiesysteembeheer/nl/page/
+  nl: https://cim.ucaiug.io/ns/nl#
+  skos: http://www.w3.org/2004/02/skos/core#
+  xsd: http://www.w3.org/2001/XMLSchema#
+  github: https://github.com/
 annotations:
   model_uri: https://modellen.netbeheernederland.nl/nbnl-geographical-location
   exchange_format: application/ld+json
   model_type: data-product
-types: {}
-enums: {}
-classes: {}
+classes:
+  Location:
+    description: "The place, scene, or point of something where someone or something\
+      \ has been, is, and/or will be at a given moment in time. It can be defined\
+      \ with one or more position points (coordinates) in a given coordinate system.\r\
+      \n"
+    from_schema: https://cim.ucaiug.io/ns#TC57CIM.IEC61968.Common
+    is_a: IdentifiedObject
+    attributes:
+      mainAddress:
+        description: Main address of the location.
+        slot_uri: cim:Location.mainAddress
+        range: StreetAddress
+        required: true
+        multivalued: false
+      PowerSystemResources:
+        description: All power system resources at this location.
+        slot_uri: cim:Location.PowerSystemResources
+        range: curie
+        required: true
+        multivalued: true
+    class_uri: cim:Location
+    tree_root: true
+  StreetAddress:
+    description: General purpose street and postal address information.
+    from_schema: https://cim.ucaiug.io/ns#TC57CIM.IEC61968.Common
+    attributes:
+      postalCode:
+        description: Postal code for the address.
+        slot_uri: cim:StreetAddress.postalCode
+        range: string
+        required: true
+        multivalued: false
+      streetDetail:
+        description: Street detail.
+        slot_uri: cim:StreetAddress.streetDetail
+        range: StreetDetail
+        required: true
+        multivalued: false
+    class_uri: cim:StreetAddress
+  StreetDetail:
+    description: "Street details, in the context of address.\r\n"
+    from_schema: https://cim.ucaiug.io/ns#TC57CIM.IEC61968.Common
+    attributes:
+      number:
+        description: Designator of the specific location on the street.
+        slot_uri: cim:StreetDetail.number
+        range: string
+        required: true
+        multivalued: false
+    class_uri: cim:StreetDetail
+  IdentifiedObject:
+    description: This is a root class to provide common identification for all classes
+      needing identification and naming attributes.
+    from_schema: https://cim.ucaiug.io/ns#TC57CIM.IEC61970.Base.Core
+    attributes:
+      mRID:
+        description: "Master resource identifier issued by a model authority. The\
+          \ mRID is unique within an exchange context. Global uniqueness is easily\
+          \ achieved by using a UUID, as specified in RFC 4122, for the mRID. The\
+          \ use of UUID is strongly recommended.\r\nFor CIMXML data files in RDF syntax\
+          \ conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about\
+          \ attributes that identify CIM object elements."
+        slot_uri: cim:IdentifiedObject.mRID
+        range: string
+        identifier: true
+        required: true
+        multivalued: false
+      name:
+        description: "The name is any free human readable and possibly non unique\
+          \ text naming the object.\r\n"
+        slot_uri: cim:IdentifiedObject.name
+        range: string
+        required: false
+        multivalued: false
+    class_uri: cim:IdentifiedObject
