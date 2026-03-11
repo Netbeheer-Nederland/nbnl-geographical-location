@@ -59,7 +59,7 @@ classes:
         description: Street detail.
         slot_uri: cim:StreetAddress.streetDetail
         range: StreetDetail
-        required: true
+        required: false
         multivalued: false
     class_uri: cim:StreetAddress
   StreetDetail:
