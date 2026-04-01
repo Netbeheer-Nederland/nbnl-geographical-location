@@ -23,6 +23,7 @@
   - '@id': urn:uuid:2808ccf7-c19c-4b96-aa65-7e21c2425458
   - '@id': urn:uuid:a37606df-80df-4049-b8a6-aaab58d6a8c5
 '@graph':
+  # --- cim:Location ----------------------------------------------------------
   - '@id': urn:uuid:70315cbc-b66a-4112-bcd6-7f24faad12df
     '@type': cim:Location
     cim:Location.mainAddress:
@@ -34,3 +35,15 @@
   - '@id': urn:uuid:db8f7181-ad02-4c9b-bf9b-bd9a1f344f96
     '@type': cim:StreetAddress
     cim:StreetAddress.postalCode: '6812AH'
+  # --- cim:Location ----------------------------------------------------------
+  - '@id': urn:uuid:bb6d1f5c-fd4f-4906-96e2-4ad790384730
+    '@type': cim:Location
+    cim:Location.mainAddress:
+      '@id': urn:uuid:fb5832be-6c29-405a-bf19-33f1838c9c0f
+    cim:Location.PowerSystemResources:
+      - urn:uuid:6467bc7b-f81b-4d86-a857-0860991d88e2
+    cim:IdentifiedObject.mRID: bb6d1f5c-fd4f-4906-96e2-4ad790384730
+    cim:IdentifiedObject.name: '6812AJ'
+  - '@id': urn:uuid:fb5832be-6c29-405a-bf19-33f1838c9c0f
+    '@type': cim:StreetAddress
+    cim:StreetAddress.postalCode: '6812AJ'
