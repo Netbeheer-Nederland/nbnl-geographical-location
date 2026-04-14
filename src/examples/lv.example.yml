@@ -22,6 +22,13 @@
 'dcterms:references':
   - '@id': urn:uuid:2808ccf7-c19c-4b96-aa65-7e21c2425458
 '@graph':
+  - '@id': urn:uuid:8dabcb33-6555-4ad8-a7ba-f1fb162ae98c
+    '@type': cim:CoordinateSystem
+    cim:CoordinateSystem.crsUrn:
+      - urn:ogc:def:crs:EPSG::4.3.2.6
+    cim:IdentifiedObject.mRID: 8dabcb33-6555-4ad8-a7ba-f1fb162ae98c
+    cim:IdentifiedObject.name: 'WGS84'
+  # --- cim:Location (1) ------------------------------------------------------
   - '@id': urn:uuid:567e9757-553b-440b-bb56-8c99e962b04e
     '@type': cim:Location
     cim:Location.mainAddress:
@@ -37,3 +44,21 @@
   - '@id': urn:uuid:b2b13af9-2175-478a-a66e-10dfe694aafe
     '@type': cim:StreetDetail
     cim:StreetDetail.number: '68'
+  # --- cim:Location (2) ------------------------------------------------------
+  - '@id': urn:uuid:32eb3bfb-238d-4835-945c-6bfd7d5d4647
+    '@type': cim:Location
+    cim:Location.PowerSystemResources:
+      - urn:uuid:abae232f-ae19-4e69-a2c7-84c4a86b78f3
+    cim:Location.CoordinateSystem:
+      '@id': urn:uuid:8dabcb33-6555-4ad8-a7ba-f1fb162ae98c
+    cim:IdentifiedObject.mRID: 32eb3bfb-238d-4835-945c-6bfd7d5d4647
+  - '@id': urn:uuid:a1a59f08-7e6d-4fd3-b722-4393d78b2ed6
+    '@type': cim:PositionPoint
+    cim:PositionPoint.xPosition:
+      '@value': 5.654751933
+      '@type': xsd:float
+    cim:PositionPoint.yPosition:
+      '@value': 52.76301542
+      '@type': xsd:float
+    cim:PositionPoint.Location:
+      '@id': urn:uuid:32eb3bfb-238d-4835-945c-6bfd7d5d4647
