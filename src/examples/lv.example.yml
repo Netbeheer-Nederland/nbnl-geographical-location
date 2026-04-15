@@ -54,11 +54,7 @@
     cim:IdentifiedObject.mRID: 32eb3bfb-238d-4835-945c-6bfd7d5d4647
   - '@id': urn:uuid:a1a59f08-7e6d-4fd3-b722-4393d78b2ed6
     '@type': cim:PositionPoint
-    cim:PositionPoint.xPosition:
-      '@value': 5.654751933
-      '@type': xsd:float
-    cim:PositionPoint.yPosition:
-      '@value': 52.76301542
-      '@type': xsd:float
+    cim:PositionPoint.xPosition: "5.654751933"
+    cim:PositionPoint.yPosition: "52.76301542"
     cim:PositionPoint.Location:
       '@id': urn:uuid:32eb3bfb-238d-4835-945c-6bfd7d5d4647

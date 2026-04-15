@@ -82,13 +82,17 @@ legend: "" {
 
 direction: down
 
+CoordinateSystem.class: enterprise
 Location.class: enterprise
+PositionPoint.class: enterprise
 PowerSystemResource.class: grid
 StreetAddress.class: enterprise
 StreetDetail.class: enterprise
 
 Location -> StreetAddress
 Location -> PowerSystemResource
+Location -> CoordinateSystem
+PositionPoint -> Location
 StreetAddress -> StreetDetail
 ----
 
