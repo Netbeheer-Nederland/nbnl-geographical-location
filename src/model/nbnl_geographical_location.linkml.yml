@@ -61,9 +61,20 @@ classes:
       PowerSystemResources:
         description: All power system resources at this location.
         slot_uri: cim:Location.PowerSystemResources
+        annotations:
+          predicate:
+            value: nl:locates
+          objects:
+            - cim:EnergyConsumer
         range: curie
         required: true
         multivalued: true
+      CongestionDocument:
+        slot_uri: nl:Location.CongestionDocument
+        range: curie
+        required: false
+        multivalued: false
+        description: CongestionDocument this Location belongs to.
       CoordinateSystem:
         slot_uri: cim:Location.CoordinateSystem
         range: CoordinateSystem
