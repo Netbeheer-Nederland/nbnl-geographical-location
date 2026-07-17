@@ -89,11 +89,11 @@ PowerSystemResource.class: grid
 StreetAddress.class: enterprise
 StreetDetail.class: enterprise
 
-Location -> StreetAddress
-Location -> PowerSystemResource
-Location -> CoordinateSystem
-PositionPoint -> Location
-StreetAddress -> StreetDetail
+Location -- CoordinateSystem
+Location -- PowerSystemResource
+Location -- StreetAddress
+PositionPoint -- Location
+StreetAddress -- StreetDetail
 ----
 
 This data product requires the use of an _Equipment_ dataset for instantiation
